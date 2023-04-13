@@ -50,7 +50,7 @@ Arc(t1,p2)
 @enduml
 ```
 
-> **Hint:** In the future there will be a release with a
+> **Hint:** In the future there will be a release of the library, which can be accessed via an URL.
 
 # Version
 
