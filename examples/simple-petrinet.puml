@@ -1,0 +1,37 @@
+/'
+This is a small example employing the plantuml library for Petri Nets.
+
+It illustrateds the definition of a simple yet colorful petri net.
+**Note:** This library currently falls back to graphviz, hence all style options are provided via graphviz options rather than plantuml options.
+
+Author: Eden_06 <thomas.eden06.kuehn@googlemail.com>
+Created on: 2023-04-12
+Website: 
+License: MIT Licence
+'/
+@startuml
+!include ../plantuml-petrinets.iuml
+
+digraph G {
+
+LeftToRight()
+
+HTrans(t3)
+VTrans(t0)
+Place(p1,_marking=Token(2))
+VTrans(t1)
+Place(p2)
+VTrans(t2)
+Place(p3,_marking=Token())
+
+Arc(t0,p1)
+Arc(p1,t1,"2")
+Arc(t1,p2)
+Arc(p2,t2)
+UpArc(t2,p3)
+UpArc(p3,t1)
+SameArc(p2,t3)
+SameArc(t3,p2)
+}
+
+@enduml

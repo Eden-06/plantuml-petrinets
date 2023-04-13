@@ -1,0 +1,95 @@
+/'
+This is a small includable plantuml library for defining Petri Nets in PlantUML.
+This library provides the following macros:
+* Place(name,as="",marking="",style="")  
+    creates a place with the given name and an optional alias, marking or style.
+* VTrans(name,as="",style="")  
+    creates a vertical transition with the given name and an optional alias or style
+* HTrans(name,as="",style="")  
+    creates a vertical transition with the given name and an optional alias or style
+* Arc(source,target,label="")  
+    creates a down/right arc from source to target with an optional label
+* UpArc(source,target,label="")  
+    creates a up/left arc from source to target with an optional label
+* SameArc(source,target,label="")  
+    creates an arc from source to target with an optional label not influencing the ranking of places and transitions
+* Token(number)  
+    creates a string of black circles as tokens
+* LeftToRight()
+    changes the diagram direction from top down to left to right
+
+It permits the simple definition of petri nets.
+**Note:** This library currently falls back to graphviz, hence all style options are provided via graphviz options rather than plantuml options.
+
+Author: Eden_06 <thomas.eden06.kuehn@googlemail.com>
+Created on: 2023-04-12
+Website: https://github.com/Eden-06/plantuml-petrinets
+License: MIT Licence
+Version: 0.1
+'/
+@startuml
+
+'HTML code for black circle used for tokens
+!_token="&#9679;"
+
+'Global style definition for places
+!_placeStyle=""
+
+'Global style definition for transitions
+!_transStyle=""
+
+!function Token(_number=1) 
+  !_result=""
+  !_i=0
+  !while _i < _number
+    !_result=_result + _token
+    !if _i==1 || _i== 4
+      !_result = _result + "\n"
+    !endif
+    !_i = _i + 1
+  !endwhile
+  !return _result
+!endfunction
+
+!procedure LeftToRight() 
+rankdir="LR"
+!end procedure
+
+!procedure Place(_name, _as="", _marking="", _style="")
+!if _as==""
+_name [shape=circle, label="_marking", xlabel="_name", fixedsize=shape, _placeStyle _style];
+!else
+_as [shape=circle, label="_marking", xlabel="_name", fixedsize=shape, _placeStyle _style];
+!endif
+!end procedure
+
+!procedure Trans(_name, _as, _width=0.1, _height=0.5,_style="")
+!if _as==""
+_name [shape=box, style=filled, fillcolor="black", fixedsize=true label="", height=_height, width=_width, xlabel="_name", _transStyle _style];
+!else
+_as [shape=box, style=filled, fillcolor="black", fixedsize=true label="", height=_height, width=_width, xlabel="_name", _transStyle _style];
+!endif
+!end procedure
+
+!procedure VTrans(_name,_as="",_style="")
+Trans(_name,_as,0.1,0.5,_style)
+!end procedure
+
+!procedure HTrans(_name,_as="",_style="")
+Trans(_name,_as,0.5,0.1,_style)
+!end procedure
+
+!procedure Arc(_source, _target, _label="")
+_source -> _target [label="_label"];
+!end procedure
+
+!procedure UpArc(_source, _target, _label="")
+_target -> _source [dir="back", label="_label"];
+!end procedure
+
+!procedure SameArc(_source, _target, _label="")
+_source -> _target [constraint=false, label="_label"];
+{rank=same; _source; _target};
+!end procedure
+
+@enduml
