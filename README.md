@@ -28,7 +28,7 @@ It permits the simple definition of petri nets.
 
 To use the library copy the library from this repository into your local folder. Then you can include it into a plantUML file and use the commands to create your petri net. Please note, that in order for this to work, the macros must be placed within a `digraph` block.
 
-Here is an example of a basic Petri Net ([`examples/basic-petrinet.puml`](examples/basic-petrinet.puml):
+Here is an example of a basic Petri Net ([`examples/basic-petrinet.puml`](examples/basic-petrinet.puml)):
 
 ```plantuml
 @startuml
