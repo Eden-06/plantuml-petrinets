@@ -1,6 +1,6 @@
 # plantuml-petrinets
 
-This is a small includable plantuml library for defining Petri Nets in PlantUML.
+This is a small includable plantuml library for defining Petri Nets in [PlantUML](https://github.com/plantuml).
 This library provides the following macros:
 
 * `Place(name,as="",marking="",style="")`  
@@ -26,7 +26,7 @@ It permits the simple definition of petri nets.
 
 # Possible Use
 
-To use the library copy the library from this repository into your local folder. Then you can include it into a plantUML file and use the commands to create your petri net. Please note, that in order for this to work, the commands must be placed within a `digraph` block.
+To use the library copy the library from this repository into your local folder. Then you can include it into a plantUML file and use the commands to create your petri net. Please note, that in order for this to work, the macros must be placed within a `digraph` block.
 
 ```plantuml
 @startuml
@@ -49,6 +49,9 @@ Arc(t1,p2)
 
 @enduml
 ```
+
+![Basic petri net](examples/basic-petrinet.png)
+
 
 > **Hint:** In the future there will be a release of the library, which can be accessed via an URL.
 
