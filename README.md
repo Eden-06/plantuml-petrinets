@@ -1,5 +1,7 @@
 # plantuml-petrinets
 
+> *"You love plantUML and Petri Nets, and you want to draw Petri Nets in plantUML? This is for you :heart:"*
+
 This is a small includable plantuml library for defining Petri Nets in [PlantUML](https://github.com/plantuml).
 This library provides the following macros:
 
@@ -28,7 +30,7 @@ It permits the simple definition of petri nets.
 
 To use the library copy the library from this repository into your local folder. Then you can include it into a plantUML file and use the commands to create your petri net. Please note, that in order for this to work, the macros must be placed within a `digraph` block.
 
-Here is an example of a basic Petri Net ([`examples/basic-petrinet.puml`](examples/basic-petrinet.puml)):
+Here is an example of a basic Petri Net:
 
 ```plantuml
 @startuml
@@ -56,6 +58,7 @@ This Petri Net can then be compiled as usual with plantuml `java -jar plantuml.j
 
 ![Basic petri net](examples/basic-petrinet.png)
 
+You will find more examples in the [examples](examples/) folder.
 
 > **Hint:** In the future there will be a release of the library, which can be accessed via an URL.
 
