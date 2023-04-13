@@ -2,7 +2,7 @@
 
 > *"You love plantUML and Petri Nets, and you want to draw Petri Nets in plantUML? This is for you :heart:"*
 
-This is a small includable plantuml library for defining Petri Nets in [PlantUML](https://github.com/plantuml).
+This is a small includable plantuml library for defining [Petri Nets](https://en.wikipedia.org/wiki/Petri_net) in [PlantUML](https://github.com/plantuml).
 This library provides the following macros:
 
 * `Place(name,as="",marking="",style="")`  
