@@ -1,2 +1,57 @@
 # plantuml-petrinets
-This is a small includable plantUML library for defining Petri Nets in plantUML.
+
+This is a small includable plantuml library for defining Petri Nets in PlantUML.
+This library provides the following macros:
+
+* `Place(name,as="",marking="",style="")`  
+    creates a place with the given name and an optional alias, marking or style.
+* `VTrans(name,as="",style="")`  
+    creates a vertical transition with the given name and an optional alias or style
+* `HTrans(name,as="",style="")`  
+    creates a vertical transition with the given name and an optional alias or style
+* `Arc(source,target,label="")`  
+    creates a down/right arc from source to target with an optional label
+* `UpArc(source,target,label="")`  
+    creates a up/left arc from source to target with an optional label
+* `SameArc(source,target,label="")`  
+    creates an arc from source to target with an optional label not influencing the ranking of places and transitions
+* `Token(number)`  
+    creates a string of black circles as tokens
+* `LeftToRight()`  
+    changes the diagram direction from top down to left to right
+
+It permits the simple definition of petri nets.
+
+> **Note:** This library currently falls back to graphviz, hence all style options are provided via graphviz options rather than plantuml options.
+
+# Possible Use
+
+To use the library copy the library from this repository into your local folder. Then you can include it into a plantUML file and use the commands to create your petri net. Please note, that in order for this to work, the commands must be placed within a `digraph` block.
+
+```plantuml
+@startuml
+!include plantuml-petrinets.iuml
+
+digraph G {
+
+LeftToRight()
+
+VTrans(t0)
+Place(p1,_marking=Token(2))
+VTrans(t1)
+Place(p2)
+
+Arc(t0,p1)
+Arc(p1,t1,"2")
+Arc(t1,p2)
+
+}
+
+@enduml
+```
+
+> **Hint:** In the future there will be a release with a
+
+# Version
+
+0.1.0
