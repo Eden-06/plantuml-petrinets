@@ -10,20 +10,20 @@ Website:
 License: MIT Licence
 '/
 @startuml
-!include plantuml-petrinets.iuml
+!include ../plantuml-petrinets.iuml
 
 digraph G {
 
 LeftToRight()
 
 VTrans(t0)
-Place(p1,_marking=Token(2))
+Place(p0,_marking=Token(2))
 VTrans(t1)
-Place(p2)
+Place(p1)
 
-Arc(t0,p1)
-Arc(p1,t1,"2")
-Arc(t1,p2)
+Arc(t0,p0)
+Arc(p0,t1,"2")
+Arc(t1,p1)
 
 }
 
