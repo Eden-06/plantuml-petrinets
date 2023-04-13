@@ -1,6 +1,6 @@
 # plantuml-petrinets
 
-> *"You love plantUML and Petri Nets, and you want to draw Petri Nets in plantUML? This is for you :heart:"*
+> *"You love PlantUML and Petri Nets, and you want to draw Petri Nets in plantUML? This is for you :heart:"*
 
 This is a small includable plantuml library for defining [Petri Nets](https://en.wikipedia.org/wiki/Petri_net) in [PlantUML](https://github.com/plantuml).
 This library provides the following macros:
@@ -22,13 +22,13 @@ This library provides the following macros:
 * `LeftToRight()`  
     changes the diagram direction from top down to left to right
 
-It permits the simple definition of petri nets.
+It permits the simple definition of Petri Nets.
 
 > **Note:** This library currently falls back to graphviz, hence all style options are provided via graphviz options rather than plantuml options.
 
 # Possible Use
 
-To use the library copy the library from this repository into your local folder. Then you can include it into a plantUML file and use the commands to create your petri net. Please note, that in order for this to work, the macros must be placed within a `digraph` block.
+To use the library copy the library from this repository into your local folder. Then you can include it into a PlantUML file and use the commands to create your petri net. Please note, that in order for this to work, the macros must be placed within a `digraph` block.
 
 Here is an example of a basic Petri Net:
 
@@ -54,19 +54,19 @@ Arc(t1,p2)
 @enduml
 ```
 
-This Petri Net can then be compiled as usual with plantuml `java -jar plantuml.jar basic-petrinet.puml`.
+This Petri Net can be compiled as usual with Plantuml `java -jar plantuml.jar basic-petrinet.puml`.
 
 ![Basic petri net](examples/basic-petrinet.png)
 
 You will find more examples in the [examples](examples/) folder.
 
-> **Hint:** In the future there will be a release of the library, which can be accessed via an URL.
+> **Hint:** In the future there will be a release of the library, which can be included via an URL.
 
 # Limitations
 
 * Uses PlantUML's fallback to Graphviz
 * It is currently impossible to color tokens
-* Places and Transitions can be styled both globally and individually. Please refere to the [Graphviz reference](https://graphviz.org/doc/info/attrs.html) for style options.
+* Places and transitions can be styled both globally and individually. Please refere to the [Graphviz reference](https://graphviz.org/doc/info/attrs.html) for style options.
 * If you want to contribute please read details on how the [plantUML's preprocessor](https://plantuml.com/en/preprocessing) works
 
 # Version
