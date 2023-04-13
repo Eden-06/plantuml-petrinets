@@ -67,7 +67,7 @@ You will find more examples in the [examples](examples/) folder.
 * Uses PlantUML's fallback to Graphviz
 * It is currently impossible to color tokens
 * Places and transitions can be styled both globally and individually. Please refere to the [Graphviz reference](https://graphviz.org/doc/info/attrs.html) for style options.
-* If you want to contribute please read details on how the [plantUML's preprocessor](https://plantuml.com/en/preprocessing) works
+* If you want to contribute please read details on how the [PlantUML's preprocessor](https://plantuml.com/en/preprocessing) works
 
 # Version
 
