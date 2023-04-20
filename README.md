@@ -58,28 +58,6 @@ digraph PTnet {
 
 This Petri Net can be compiled as usual with Plantuml `java -jar plantuml.jar basic-petrinet.puml`.
 
-```plantuml
-@startuml
-!include https://github.com/Eden-06/plantuml-petrinets/releases/download/v0.1.1/plantuml-petrinets.iuml
-
-digraph PTnet {
-
-  LeftToRight()
-
-  VTrans(t0)
-  Place(p1,_marking=Token(2))
-  VTrans(t1)
-  Place(p2)
-
-  Arc(t0,p1)
-  Arc(p1,t1,"2")
-  Arc(t1,p2)
-
-}
-
-@enduml
-```
-
 ![Basic petri net](examples/basic-petrinet.png)
 
 You will find more examples in the [examples](examples/) folder.
