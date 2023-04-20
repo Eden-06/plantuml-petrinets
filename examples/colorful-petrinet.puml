@@ -28,8 +28,8 @@ Place(p3,_marking=Token())
 Arc(p1,t1,"2")
 Arc(t1,p2)
 Arc(p2,t2)
-UpArc(t2,p3)
-UpArc(p3,t1)
+ArcUp(t2,p3)
+ArcUp(p3,t1)
 }
 
 @enduml
