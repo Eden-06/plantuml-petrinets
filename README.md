@@ -52,7 +52,6 @@ digraph PTnet {
   Arc(t1,p2)
 
 }
-
 @enduml
 ```
 
