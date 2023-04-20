@@ -1,0 +1,31 @@
+/'
+This is an example of a k-bounded petri net employing the plantuml library for Petri Nets.
+
+It illustrateds the definition of a simple yet colorful petri net.
+**Note:** This library currently falls back to graphviz, hence all style options are provided via graphviz options rather than plantuml options.
+
+Author: Eden_06 <thomas.eden06.kuehn@googlemail.com>
+Created on: 2023-04-12
+Website: 
+License: MIT Licence
+'/
+@startuml
+!include ../plantuml-petrinets.iuml
+
+digraph G {
+
+LeftToRight()
+
+VTrans(t0)
+Place(p0,_marking=Token(1))
+VTrans(t1)
+Place(p1,_marking=Token(1))
+
+Arc(t0,p0)
+Arc(p0,t1,"2")
+ArcUp(t1,p1,"2")
+ArcUp(p1,t0)
+
+}
+
+@enduml
