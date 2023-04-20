@@ -9,13 +9,15 @@ This library provides the following macros:
     creates a vertical transition with the given name and an optional alias or style
 * Arc(source,target,label="")  
     creates a down/right arc from source to target with an optional label
-* UpArc(source,target,label="")  
+* ArcUp(source,target,label="") or UpArc(source,target,label="")
     creates a up/left arc from source to target with an optional label
-* SameArc(source,target,label="")  
+* ArcSame(source,target,label="") or SameArc(source,target,label="")  
+    creates an arc from source to target with an optional label not influencing the ranking of places and transitions
+* ArcNoRank(source,target,label="")  
     creates an arc from source to target with an optional label not influencing the ranking of places and transitions
 * Token(number)  
     creates a string of black circles as tokens
-* LeftToRight()
+* LeftToRight()  
     changes the diagram direction from top down to left to right
 
 It permits the simple definition of petri nets.
@@ -25,7 +27,7 @@ Author: Eden_06 <thomas.eden06.kuehn@googlemail.com>
 Created on: 2023-04-12
 Website: https://github.com/Eden-06/plantuml-petrinets
 License: MIT Licence
-Version: 0.1
+Version: 0.1.1
 '/
 @startuml
 
@@ -83,13 +85,28 @@ Trans(_name,_as,0.5,0.1,_style)
 _source -> _target [label="_label"];
 !end procedure
 
+!procedure ArcUp(_source, _target, _label="")
+_target -> _source [dir="back", label="_label"];
+!end procedure
+
+'Deprecated
 !procedure UpArc(_source, _target, _label="")
 _target -> _source [dir="back", label="_label"];
 !end procedure
 
+!procedure ArcSame(_source, _target, _label="")
+_source -> _target [constraint=false, label="_label"];
+{rank=same; _source; _target};
+!end procedure
+
+'Deprecated
 !procedure SameArc(_source, _target, _label="")
 _source -> _target [constraint=false, label="_label"];
 {rank=same; _source; _target};
+!end procedure
+
+!procedure ArcNoRank(_source, _target, _label="")
+_source -> _target [constraint=false, label="_label"];
 !end procedure
 
 @enduml

@@ -1,6 +1,6 @@
 # plantuml-petrinets
 
-> *"You love PlantUML and Petri Nets, and you want to draw Petri Nets in plantUML? This is for you :heart:"*
+> *"You love PlantUML and Petri Nets, and you want to draw Petri Nets in PlantUML? This is for you :heart:"*
 
 This is a small includable plantuml library for defining [Petri Nets](https://en.wikipedia.org/wiki/Petri_net) in [PlantUML](https://github.com/plantuml).
 This library provides the following macros:
@@ -13,9 +13,11 @@ This library provides the following macros:
     creates a vertical transition with the given name and an optional alias or style
 * `Arc(source,target,label="")`  
     creates a down/right arc from source to target with an optional label
-* `UpArc(source,target,label="")`  
+* `ArcUp(source,target,label="")` or `UpArc(source,target,label="")`
     creates a up/left arc from source to target with an optional label
-* `SameArc(source,target,label="")`  
+* `ArcSame(source,target,label="")` or `SameArc(source,target,label="")`  
+    creates an arc from source to target with an optional label not influencing the ranking of places and transitions
+* `ArcNoRank(source,target,label="")`  
     creates an arc from source to target with an optional label not influencing the ranking of places and transitions
 * `Token(number)`  
     creates a string of black circles as tokens
@@ -71,4 +73,4 @@ You will find more examples in the [examples](examples/) folder.
 
 # Version
 
-0.1.0
+0.1.1
