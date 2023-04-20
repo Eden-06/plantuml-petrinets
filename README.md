@@ -59,7 +59,7 @@ digraph PTnet {
 This Petri Net can be compiled as usual with Plantuml `java -jar plantuml.jar basic-petrinet.puml`.
 
 ```plantuml
-!include <https://github.com/Eden-06/plantuml-petrinets/releases/download/v0.1.1/plantuml-petrinets.iuml>
+!include https://github.com/Eden-06/plantuml-petrinets/releases/download/v0.1.1/plantuml-petrinets.iuml
 
 digraph PTnet {
 
