@@ -12,24 +12,24 @@ License: MIT Licence
 @startuml
 !include ../plantuml-petrinets.iuml
 
-digraph G {
+digraph PTnet {
 
-LeftToRight()
+  LeftToRight()
 
-%set_variable_value("_placeStyle", "style=filled, fillcolor=yellow")
-%set_variable_value("_transStyle","fillcolor=blue")
+  %set_variable_value("_placeStyle", "style=filled, fillcolor=yellow")
+  %set_variable_value("_transStyle", "fillcolor=blue")
 
-Place(p1,_marking=Token(2))
-VTrans(t1,_style="fillcolor=red")
-Place("P 2",p2,_style="fillcolor=green")
-VTrans(t2,"")
-Place(p3,_marking=Token())
+  Place(p1,_marking=Token(2))
+  VTrans(t1,_style="fillcolor=red")
+  Place("P 2",p2,_style="fillcolor=green")
+  VTrans(t2,"")
+  Place(p3,_marking=Token())
 
-Arc(p1,t1,"2")
-Arc(t1,p2)
-Arc(p2,t2)
-ArcUp(t2,p3)
-ArcUp(p3,t1)
+  Arc(p1,t1,"2")
+  Arc(t1,p2)
+  Arc(p2,t2)
+  ArcUp(t2,p3)
+  ArcUp(p3,t1)
 }
 
 @enduml

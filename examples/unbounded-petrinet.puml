@@ -12,20 +12,19 @@ License: MIT Licence
 @startuml
 !include ../plantuml-petrinets.iuml
 
-digraph G {
+digraph PTnet {
 
-LeftToRight()
+  LeftToRight()
 
-VTrans(t0)
-Place(p0,_marking=Token(1))
-VTrans(t1)
-HTrans(t2)
+  VTrans(t0)
+  Place(p0,_marking=Token(1))
+  VTrans(t1)
+  HTrans(t2)
 
-Arc(t0,p0)
-Arc(p0,t1,"2")
-ArcSame(p0,t2)
-ArcSame(t2,p0)
-
+  Arc(t0,p0)
+  Arc(p0,t1,"2")
+  ArcSame(p0,t2)
+  ArcSame(t2,p0)
 
 }
 

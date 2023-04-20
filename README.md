@@ -38,18 +38,18 @@ Here is an example of a basic Petri Net:
 @startuml
 !include plantuml-petrinets.iuml
 
-digraph G {
+digraph PTnet {
 
-LeftToRight()
+  LeftToRight()
 
-VTrans(t0)
-Place(p1,_marking=Token(2))
-VTrans(t1)
-Place(p2)
+  VTrans(t0)
+  Place(p1,_marking=Token(2))
+  VTrans(t1)
+  Place(p2)
 
-Arc(t0,p1)
-Arc(p1,t1,"2")
-Arc(t1,p2)
+  Arc(t0,p1)
+  Arc(p1,t1,"2")
+  Arc(t1,p2)
 
 }
 
