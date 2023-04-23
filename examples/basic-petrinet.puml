@@ -16,14 +16,15 @@ digraph PTnet {
 
   LeftToRight()
 
-  VTrans(t0)
-  Place(p0,_marking=Token(2))
-  VTrans(t1)
-  Place(p1)
+  VTrans(Sub("t0"),t0)
+  Place(Sub("s0"),s0,_marking=Token(2))
+  VTrans(Sub("t1"),t1,_style="fillcolor=red")
+  Place(Sub("s1"),s1)
 
-  Arc(t0,p0)
-  Arc(p0,t1,"2")
-  Arc(t1,p1)
+  Arc(t0,s0)
+  Arc(s0,t1,"2")
+  Arc(t1,s1)
+  ArcHidden(s0,s1)
 
 }
 

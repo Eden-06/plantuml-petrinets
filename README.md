@@ -23,6 +23,8 @@ This library provides the following macros:
     creates an invisible arc from source to target affecting the ranking and placement of nodes
 * `Token(number)`  
     creates a string of black circles as tokens
+* `Sub(string)`  
+    creates a string replacing any number to its subscript version, e.g. Sub("t1") yields "t₁".
 * `LeftToRight()`  
     changes the diagram direction from top down to left to right
 
@@ -74,4 +76,4 @@ You will find more examples in the [examples](examples/) folder.
 
 # Version
 
-0.1.1
+0.1.2

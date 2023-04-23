@@ -19,6 +19,8 @@ This library provides the following macros:
     creates an invisible arc from source to target affecting the ranking and placement of nodes
 * Token(number)  
     creates a string of black circles as tokens
+* Sub(string)
+    creates a string replacing any number to its subscript version, e.g. Sub("t1") yields "t₁".
 * LeftToRight()  
     changes the diagram direction from top down to left to right
 
@@ -29,7 +31,7 @@ Author: Eden_06 <thomas.eden06.kuehn@googlemail.com>
 Created on: 2023-04-12
 Website: https://github.com/Eden-06/plantuml-petrinets
 License: MIT Licence
-Version: 0.1.1
+Version: 0.1.2
 '/
 @startuml
 
@@ -54,6 +56,40 @@ Version: 0.1.1
   !endwhile
   !return _result
 !endfunction
+
+!function Sub(_string)
+!_result=""
+!_index=0
+!_length=%strlen(_string)
+!while _index <= _length
+  !_char=%substr(_string,_index,1)
+  !if (_char=="0")
+    !_result=_result + "₀"
+  !elseif (_char=="1")
+    !_result=_result + "₁"
+  !elseif (_char=="2")
+    !_result=_result + "₂"
+  !elseif (_char=="3")
+    !_result=_result + "₃"
+  !elseif (_char=="4")
+    !_result=_result + "₄"
+  !elseif (_char=="5")
+    !_result=_result + "₅"
+  !elseif (_char=="6")
+    !_result=_result + "₆"
+  !elseif (_char=="7")
+    !_result=_result + "₇"
+  !elseif (_char=="8")
+    !_result=_result + "₈"
+  !elseif (_char=="9")
+    !_result=_result + "₉"
+  !else
+    !_result=_result + _char
+  !endif
+  !_index=_index + 1
+!endwhile
+!return _result
+!end function
 
 !procedure LeftToRight() 
 rankdir="LR"
