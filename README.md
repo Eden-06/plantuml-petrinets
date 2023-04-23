@@ -19,6 +19,8 @@ This library provides the following macros:
     creates an arc from source to target with an optional label not influencing the ranking of places and transitions
 * `ArcNoRank(source,target,label="")`  
     creates an arc from source to target with an optional label not influencing the ranking of places and transitions
+* `ArcHidden(source,target)`  
+    creates an invisible arc from source to target affecting the ranking and placement of nodes
 * `Token(number)`  
     creates a string of black circles as tokens
 * `LeftToRight()`  

@@ -15,6 +15,8 @@ This library provides the following macros:
     creates an arc from source to target with an optional label not influencing the ranking of places and transitions
 * ArcNoRank(source,target,label="")  
     creates an arc from source to target with an optional label not influencing the ranking of places and transitions
+* ArcHidden(source,target)
+    creates an invisible arc from source to target affecting the ranking and placement of nodes
 * Token(number)  
     creates a string of black circles as tokens
 * LeftToRight()  
@@ -107,6 +109,10 @@ _source -> _target [constraint=false, label="_label"];
 
 !procedure ArcNoRank(_source, _target, _label="")
 _source -> _target [constraint=false, label="_label"];
+!end procedure
+
+!procedure ArcHidden(_source, _target)
+_source -> _target [style="invis"];
 !end procedure
 
 @enduml
