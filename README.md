@@ -40,22 +40,24 @@ Here is an example of a basic Petri Net:
 
 ```plantuml
 @startuml
-!include plantuml-petrinets.iuml
+!include ../plantuml-petrinets.iuml
 
 digraph PTnet {
 
   LeftToRight()
 
-  VTrans(t0)
-  Place(p1,_marking=Token(2))
-  VTrans(t1)
-  Place(p2)
+  VTrans(Sub("t0"),t0)
+  Place(Sub("s0"),s0,_marking=Token(2))
+  VTrans(Sub("t1"),t1,_style="fillcolor=red")
+  Place(Sub("s1"),s1)
 
-  Arc(t0,p1)
-  Arc(p1,t1,"2")
-  Arc(t1,p2)
+  Arc(t0,s0)
+  Arc(s0,t1,"2")
+  Arc(t1,s1)
+  ArcHidden(s0,s1)
 
 }
+
 @enduml
 ```
 
